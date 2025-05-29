@@ -1,0 +1,26 @@
+// Library name: MLProj
+// Cell name: double_balanced_passive_mixer
+// View name: schematic
+I2 (IF_out IF\- IF\+) balun rin=50 rout=100 loss=0
+I1 (net1 LO\+ LO\-) balun rin=50 rout=100 loss=0
+I0 (net2 RF\+ RF\-) balun rin=50 rout=100 loss=0
+N3 (IF\- LO\+ RF\- GND) nmos w=W l=45.0n as=W * 2.5 * (45.0n) ad=W * 2.5 * (45.0n) \
+         ps=(2 * W) + (5 * (45.0n)) pd=(2 * W) + (5 * (45.0n)) m=1 \
+        region=sat
+N2 (IF\+ LO\- RF\- GND) nmos w=W l=45.0n as=W * 2.5 * (45.0n) ad=W * 2.5 * (45.0n) \
+         ps=(2 * W) + (5 * (45.0n)) pd=(2 * W) + (5 * (45.0n)) m=1 \
+        region=sat
+N1 (IF\- LO\- RF\+ GND) nmos w=W l=45.0n as=W * 2.5 * (45.0n) ad=W * 2.5 * (45.0n) \
+         ps=(2 * W) + (5 * (45.0n)) pd=(2 * W) + (5 * (45.0n)) m=1 \
+        region=sat
+N0 (IF\+ LO\+ RF\+ GND) nmos w=W l=45.0n as=W * 2.5 * (45.0n) ad=W * 2.5 * (45.0n) \
+         ps=(2 * W) + (5 * (45.0n)) pd=(2 * W) + (5 * (45.0n)) m=1 \
+        region=sat
+PORT1 (net2 GND) port r=50 type=sine freq=frf dbm=prf pacmag=pacmag
+PORT2 (IF_out GND) port r=50 type=sine
+PORT0 (net1 GND) port r=50 type=sine freq=flo dbm=plo
+C1 (IF\- GND) capacitor c=C m=1
+C0 (IF\+ GND) capacitor c=C m=1
+V0 (GND 0) vsource type=dc
+R0 (IF\+ GND) resistor r=R m=1
+R1 (IF\- GND) resistor r=R m=1

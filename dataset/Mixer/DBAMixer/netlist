@@ -1,0 +1,34 @@
+// Library name: MLProj_v2_Mixer
+// Cell name: Gilbert_Cell
+// View name: schematic
+N5 (net2 RF\- net4 GND) nmos w=WN1_RF l=45.0n as=WN1_RF * 2.5 * (45.0n) ad=WN1_RF * 2.5 * (45.0n) \
+         ps=(2 * WN1_RF) + (5 * (45.0n)) pd=(2 * WN1_RF) + (5 * (45.0n)) m=5 \
+        region=sat
+N4 (net1 RF\+ net4 GND) nmos w=WN1_RF l=45.0n as=WN1_RF * 2.5 * (45.0n) ad=WN1_RF * 2.5 * (45.0n) \
+         ps=(2 * WN1_RF) + (5 * (45.0n)) pd=(2 * WN1_RF) + (5 * (45.0n)) m=5 \
+        region=sat
+N3 (IF\- LO\+ net2 GND) nmos w=WN2_LO l=45.0n as=WN2_LO * 2.5 * (45.0n) ad=WN2_LO * 2.5 * (45.0n) \
+         ps=(2 * WN2_LO) + (5 * (45.0n)) pd=(2 * WN2_LO) + (5 * (45.0n)) m=5 \
+        region=sat
+N2 (IF\+ LO\- net2 GND) nmos w=WN2_LO l=45.0n as=WN2_LO * 2.5 * (45.0n) ad=WN2_LO * 2.5 * (45.0n) \
+         ps=(2 * WN2_LO) + (5 * (45.0n)) pd=(2 * WN2_LO) + (5 * (45.0n)) m=5 \
+        region=sat
+N1 (IF\- LO\- net1 GND) nmos w=WN2_LO l=45.0n as=WN2_LO * 2.5 * (45.0n) ad=WN2_LO * 2.5 * (45.0n) \
+         ps=(2 * WN2_LO) + (5 * (45.0n)) pd=(2 * WN2_LO) + (5 * (45.0n)) m=5 \
+        region=sat
+N0 (IF\+ LO\+ net1 GND) nmos w=WN2_LO l=45.0n as=WN2_LO * 2.5 * (45.0n) ad=WN2_LO * 2.5 * (45.0n) \
+         ps=(2 * WN2_LO) + (5 * (45.0n)) pd=(2 * WN2_LO) + (5 * (45.0n)) m=5 \
+        region=sat
+C1 (VDD IF\-) capacitor c=C
+C0 (VDD IF\+) capacitor c=C
+R1 (VDD IF\-) resistor r=R
+R0 (VDD IF\+) resistor r=R
+I0 (net4 0) isource dc=Itail type=dc
+V1 (GND 0) vsource dc=0 type=dc
+V0 (VDD 0) vsource dc=VDD type=dc
+I6 (IF_OUT IF\+ IF\-) balun rin=50 rout=25 loss=0
+I5 (net6 RF\+ RF\-) balun rin=50 rout=25 loss=0
+I4 (net5 LO\+ LO\-) balun rin=50 rout=25 loss=0
+PORT0 (net5 0) port r=50 num=2 type=sine freq=flo dbm=plo
+PORT1 (net6 0) port r=50 num=1 type=dc freq=frf dbm=prf pacmag=pacmag
+PORT2 (IF_OUT 0) port r=50 num=3 type=dc

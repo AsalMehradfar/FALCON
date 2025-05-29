@@ -1,0 +1,27 @@
+// Library name: MLProj_v2_VCO_30GHz
+// Cell name: Inductive_Feedback
+// View name: schematic
+V2 (VDD 0) vsource dc=VDD type=dc
+V1 (GND 0) vsource dc=0 type=dc
+V0 (Vcont 0) vsource dc=Vcont type=dc
+N3 (Vcont Vout\- Vcont GND) nmos w=Wvar l=45.0n as=Wvar * 2.5 * (45.0n) ad=Wvar * 2.5 * (45.0n) \
+         ps=(2 * Wvar) + (5 * (45.0n)) pd=(2 * Wvar) + (5 * (45.0n)) m=10 \
+        region=sat
+N2 (Vcont Vout\+ Vcont GND) nmos w=Wvar l=45.0n as=Wvar * 2.5 * (45.0n) ad=Wvar * 2.5 * (45.0n) \
+         ps=(2 * Wvar) + (5 * (45.0n)) pd=(2 * Wvar) + (5 * (45.0n)) m=10 \
+        region=sat
+N1 (Vout\+ net9 net7 GND) nmos w=Wn l=45.0n as=Wn * 2.5 * (45.0n) ad=Wn * 2.5 * (45.0n) \
+         ps=(2 * Wn) + (5 * (45.0n)) pd=(2 * Wn) + (5 * (45.0n)) m=10 \
+        region=sat
+N0 (Vout\- net15 net8 GND) nmos w=Wn l=45.0n as=Wn * 2.5 * (45.0n) ad=Wn * 2.5 * (45.0n) \
+         ps=(2 * Wn) + (5 * (45.0n)) pd=(2 * Wn) + (5 * (45.0n)) m=10 \
+        region=sat
+L5 (net8 0) inductor l=3n
+L4 (net7 0) inductor l=3n
+L3 (Vout\- net15) inductor l=L2
+L2 (Vout\+ net9) inductor l=L2
+L1 (VDD Vout\-) inductor l=L1
+L0 (VDD Vout\+) inductor l=L1
+C2 (net8 0) capacitor c=C2
+C1 (0 net7) capacitor c=C2
+C0 (net7 net8) capacitor c=C1

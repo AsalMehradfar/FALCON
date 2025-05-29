@@ -1,0 +1,19 @@
+// Library name: MLProj
+// Cell name: class_e_pa
+// View name: schematic
+N0 (net7 net3 GND GND) nmos w=W l=45.0n as=W * 2.5 * (45.0n) ad=W * 2.5 * (45.0n) \
+         ps=(2 * W) + (5 * (45.0n)) pd=(2 * W) + (5 * (45.0n)) m=2 \
+        region=sat
+L7 (net6 net3) inductor l=Ls1 m=1
+L6 (net3 net4) inductor l=LS m=1
+L1 (net2 OUT) inductor l=Ls2 m=1
+L0 (net5 net7) inductor l=Lp m=1
+C5 (net6 IN) capacitor c=Cp0 m=1
+C2 (GND net3) capacitor c=Cp1 m=1
+C1 (GND net7) capacitor c=Cshunt m=1
+C0 (net7 net2) capacitor c=Cs m=1
+V2 (net4 GND) vsource type=dc dc=Vbias
+V0 (GND 0) vsource type=dc dc=0
+V1 (net5 0) vsource type=dc dc=1.2
+PORT1 (OUT GND) port r=50 type=dc
+PORT0 (IN GND) port r=50 type=sine freq=fin dbm=pin

@@ -1,0 +1,17 @@
+// Library name: MLP_Colpitts
+// Cell name: Colpitts
+// View name: schematic
+N1 (Vcont net1 Vcont GND) nmos w=Wvar l=45.0n as=Wvar * 2.5 * (45.0n) ad=Wvar * 2.5 * (45.0n) \
+         ps=(2 * Wvar) + (5 * (45.0n)) pd=(2 * Wvar) + (5 * (45.0n)) m=5 \
+        region=sat
+N0 (Vout Vbias net1 GND) nmos w=W1 l=45.0n as=W1 * 2.5 * (45.0n) ad=W1 * 2.5 * (45.0n) \
+         ps=(2 * W1) + (5 * (45.0n)) pd=(2 * W1) + (5 * (45.0n)) m=1 \
+        region=sat
+I6 (Vout Vbias) isource type=dc mag=1m m=1
+I0 (net1 0) isource type=dc dc=idc m=1
+C0 (Vout net1) capacitor c=C1 m=1 ic=1m 
+L0 (VDD Vout) inductor l=L m=1
+V3 (VDD 0) vsource type=dc dc=1.2
+V1 (GND 0) vsource type=dc dc=0
+V0 (Vbias 0) vsource type=dc dc=Vbias
+V2 (Vcont 0) vsource type=dc dc=Vcont

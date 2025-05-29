@@ -1,0 +1,15 @@
+.DS_Store
+**/__pycache__/
+.ipynb_checkpoints
+wandb/*
+dataset_raw.csv
+performance_scaler_mlp.pkl
+performance_scaler_gnn.pkl
+performance_class_data.pt
+gnn_data.pt
+gnn_test_data.pt
+gnn_heldout_data.pt
+results/
+plots/
+best_gnn_model_final.pt
+data_preprocessing.ipynb

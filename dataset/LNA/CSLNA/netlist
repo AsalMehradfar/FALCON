@@ -1,0 +1,17 @@
+// Library name: MLProj
+// Cell name: lna_v2
+// View name: schematic
+N0 (net3 net2 net6 GND) nmos w=W l=45.0n as=W * 2.5 * (45.0n) ad=W * 2.5 * (45.0n) \
+         ps=(2 * W) + (5 * (45.0n)) pd=(2 * W) + (5 * (45.0n)) m=1 \
+        region=sat
+L3 (net6 GND) inductor l=Ls m=1
+L4 (net7 net2) inductor l=Lg m=1
+L2 (VDD net3) inductor l=10n m=1
+V2 (GND 0) vsource type=dc dc=0
+V1 (VDD GND) vsource type=dc dc=1.8
+V0 (net1 GND) vsource type=dc dc=VGS
+C2 (net3 net5) capacitor c=C2 m=1
+C0 (net7 net4) capacitor c=C1 m=1
+PORT1 (net5 GND) port r=50 type=sine
+PORT0 (net4 GND) port r=50 dc=1 type=sine freq=30G dbm=-20
+L0 (net7 net1) inductor l=1n

@@ -1,0 +1,12 @@
+// Library name: MLP_Sourcefollower
+// Cell name: sourcefollower
+// View name: schematic
+N1 (Vout net1 0 0) nmos w=W2 l=45.0n as=W2 * 2.5 * (45.0n) ad=W2 * 2.5 * (45.0n) \
+         ps=(2 * W2) + (5 * (45.0n)) pd=(2 * W2) + (5 * (45.0n)) m=1 \
+        region=sat
+N0 (VDD Vin Vout 0) nmos w=W1 l=45.0n as=W1 * 2.5 * (45.0n) ad=W1 * 2.5 * (45.0n) \
+         ps=(2 * W1) + (5 * (45.0n)) pd=(2 * W1) + (5 * (45.0n)) m=1 \
+        region=sat
+V2 (Vin 0) vsource type=dc dc=Vgate mag=1
+V1 (net1 0) vsource type=dc dc=Vbias
+V0 (VDD 0) vsource type=dc dc=VDD

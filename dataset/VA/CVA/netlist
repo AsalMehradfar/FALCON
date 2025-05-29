@@ -1,0 +1,18 @@
+// Library name: MLProj
+// Cell name: cascode_va
+// View name: schematic
+N0 (Vout\+ Vbias net1 GND) nmos w=Wn2 l=45.0n as=Wn2 * 2.5 * (45.0n) ad=Wn2 * 2.5 * (45.0n) \
+         ps=(2 * Wn2) + (5 * (45.0n)) pd=(2 * Wn2) + (5 * (45.0n)) m=1 \
+        region=sat
+N1 (net1 Vin\+ net2 GND) nmos w=Wn1 l=45.0n as=Wn1 * 2.5 * (45.0n) ad=Wn1 * 2.5 * (45.0n) \
+         ps=(2 * Wn1) + (5 * (45.0n)) pd=(2 * Wn1) + (5 * (45.0n)) m=1 \
+        region=sat
+N4 (net2 Vbias 0 GND) nmos w=Wbias l=45.0n as=Wbias * 2.5 * (45.0n) ad=Wbias * 2.5 * (45.0n) \
+         ps=(2 * Wbias) + (5 * (45.0n)) pd=(2 * Wbias) + (5 * (45.0n)) m=1 \
+        region=sat
+V3 (GND 0) vsource type=dc
+V1 (Vbias 0) vsource dc=1 type=dc
+V0 (VDD 0) vsource dc=1.2 type=dc
+V4 (Vin\+ 0) vsource dc=800m mag=1 phase=0 type=dc
+C0 (Vout\+ 0) capacitor c=1p
+R0 (VDD Vout\+) resistor r=Rd

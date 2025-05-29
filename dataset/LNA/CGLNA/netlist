@@ -1,0 +1,20 @@
+// Library name: MLProj_v2_LNA_CG
+// Cell name: CG_LNA
+// View name: schematic
+N1 (net4 net4 0 GND) nmos w=WN2 l=45.0n as=WN2 * 2.5 * (45.0n) ad=WN2 * 2.5 * (45.0n) \
+         ps=(2 * WN2) + (5 * (45.0n)) pd=(2 * WN2) + (5 * (45.0n)) m=1 \
+        region=sat
+N0 (Vout net4 net1 GND) nmos w=WN1 l=45.0n as=WN1 * 2.5 * (45.0n) ad=WN1 * 2.5 * (45.0n) \
+         ps=(2 * WN1) + (5 * (45.0n)) pd=(2 * WN1) + (5 * (45.0n)) m=5 \
+        region=sat
+C2 (net4 0) capacitor c=Cb
+C1 (Vin net1) capacitor c=C1
+C0 (Vout 0) capacitor c=C2
+L2 (Vin 0) inductor l=200p
+L1 (net1 0) inductor l=Ls
+L0 (VDD Vout) inductor l=Ld
+I0 (VDD net4) isource dc=Iref type=dc
+V1 (GND 0) vsource dc=0 type=dc
+V0 (VDD 0) vsource dc=VDD type=dc
+PORT1 (Vout 0) port r=50 type=dc
+PORT0 (Vin 0) port r=50 type=sine freq=fin dbm=pin

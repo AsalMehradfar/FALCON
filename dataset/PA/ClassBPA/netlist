@@ -1,0 +1,21 @@
+// Library name: MLP_ClassBPA
+// Cell name: classbPA
+// View name: schematic
+N0 (VDD net7 net2 0) nmos w=W1 l=45.0n as=W1 * 2.5 * (45.0n) ad=W1 * 2.5 * (45.0n) \
+         ps=(2 * W1) + (5 * (45.0n)) pd=(2 * W1) + (5 * (45.0n)) m=1 \
+        region=sat
+PORT0 (net1 0) port r=50 type=sine freq=fin dbm=pin fundname="fin"
+P0 (0 net4 net2 0) pmos w=W2 l=45.0n as=W2 * 2.5 * (45.0n) ad=W2 * 2.5 * (45.0n) \
+         ps=(2 * W2) + (5 * (45.0n)) pd=(2 * W2) + (5 * (45.0n)) m=1 \
+        region=sat
+R3 (net4 0) resistor r=R1 m=1
+R5 (net3 net4) resistor r=R2 m=1
+R4 (net7 net3) resistor r=R2 m=1
+R0 (VDD net7) resistor r=R1 m=1
+C6 (net5 0) capacitor c=Cm2 m=1
+C1 (Vin net4) capacitor c=C1 m=1
+C0 (Vin net7) capacitor c=C1 m=1
+V0 (VDD 0) vsource type=dc dc=Vdc
+PORT1 (net5 0) port r=50 type=dc
+L2 (net2 net5) inductor l=Lm2 m=1
+L0 (net1 Vin) inductor l=Lm m=1

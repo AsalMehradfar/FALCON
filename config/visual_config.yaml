@@ -1,0 +1,38 @@
+colors:
+  - purple
+  - pink
+  - brown
+  - olive
+  - maroon
+  - teal
+  - violet
+  - indigo
+  - gold
+  - silver
+  - coral
+  - salmon
+  - turquoise
+  - khaki
+  - lavender
+  - ivory
+  - chartreuse
+element_colors: 
+  nmos: blue
+  pmos: red
+  resistor: deeppink
+  capacitor: maroon
+  vsource: gold
+  port: green
+  inductor: orange
+  balun: salmon
+  isource: violet
+element_colors_paper: 
+  nmos: '#1f77b4'
+  pmos: '#7f7f7f'
+  resistor: '#d62728'
+  capacitor: '#17becf'
+  vsource: '#A05157'
+  port: '#2B3A67'
+  inductor: '#ff7f0e'
+  balun: '#9467bd'
+  isource: '#2ca02c'

@@ -1,0 +1,236 @@
+{
+    "x": [
+        [
+            0.0
+        ],
+        [
+            1.0
+        ],
+        [
+            2.0
+        ],
+        [
+            3.0
+        ],
+        [
+            4.0
+        ],
+        [
+            5.0
+        ],
+        [
+            6.0
+        ],
+        [
+            7.0
+        ],
+        [
+            8.0
+        ]
+    ],
+    "edge_index": [
+        [
+            0,
+            0,
+            0,
+            1,
+            1,
+            1,
+            2,
+            3,
+            3,
+            3,
+            3,
+            4,
+            4
+        ],
+        [
+            1,
+            2,
+            4,
+            2,
+            5,
+            7,
+            3,
+            5,
+            6,
+            7,
+            8,
+            8,
+            6
+        ]
+    ],
+    "node_mapping": {
+        "net2": 0,
+        "net3": 1,
+        "net6": 2,
+        "GND": 3,
+        "net7": 4,
+        "VDD": 5,
+        "net1": 6,
+        "net5": 7,
+        "net4": 8
+    },
+    "edge_attr_dict": {
+        "(0, 1, 0)": {
+            "component": "nmos_DG",
+            "name": "N0",
+            "numeric_attrs": {
+                "l": 4.5e-08,
+                "m": 1.0,
+                "region": "sat"
+            },
+            "parametric_attrs": {
+                "w": "W"
+            },
+            "computing_attrs": {
+                "as": "W * 2.5 * (45.0n)",
+                "ad": "W * 2.5 * (45.0n)",
+                "ps": "(2 * W) + (5 * (45.0n))",
+                "pd": "(2 * W) + (5 * (45.0n))"
+            }
+        },
+        "(0, 2, 0)": {
+            "component": "nmos_GS",
+            "name": "N0",
+            "numeric_attrs": {
+                "l": 4.5e-08,
+                "m": 1.0,
+                "region": "sat"
+            },
+            "parametric_attrs": {
+                "w": "W"
+            },
+            "computing_attrs": {
+                "as": "W * 2.5 * (45.0n)",
+                "ad": "W * 2.5 * (45.0n)",
+                "ps": "(2 * W) + (5 * (45.0n))",
+                "pd": "(2 * W) + (5 * (45.0n))"
+            }
+        },
+        "(0, 4, 0)": {
+            "component": "inductor",
+            "name": "L4",
+            "numeric_attrs": {
+                "m": 1.0
+            },
+            "parametric_attrs": {
+                "l": "Lg"
+            },
+            "computing_attrs": {}
+        },
+        "(1, 2, 0)": {
+            "component": "nmos_DS",
+            "name": "N0",
+            "numeric_attrs": {
+                "l": 4.5e-08,
+                "m": 1.0,
+                "region": "sat"
+            },
+            "parametric_attrs": {
+                "w": "W"
+            },
+            "computing_attrs": {
+                "as": "W * 2.5 * (45.0n)",
+                "ad": "W * 2.5 * (45.0n)",
+                "ps": "(2 * W) + (5 * (45.0n))",
+                "pd": "(2 * W) + (5 * (45.0n))"
+            }
+        },
+        "(1, 5, 0)": {
+            "component": "inductor",
+            "name": "L2",
+            "numeric_attrs": {
+                "l": 1e-08,
+                "m": 1.0
+            },
+            "parametric_attrs": {},
+            "computing_attrs": {}
+        },
+        "(1, 7, 0)": {
+            "component": "capacitor",
+            "name": "C2",
+            "numeric_attrs": {
+                "c": 0.0,
+                "m": 1.0
+            },
+            "parametric_attrs": {},
+            "computing_attrs": {}
+        },
+        "(2, 3, 0)": {
+            "component": "inductor",
+            "name": "L3",
+            "numeric_attrs": {
+                "m": 1.0
+            },
+            "parametric_attrs": {
+                "l": "Ls"
+            },
+            "computing_attrs": {}
+        },
+        "(3, 5, 0)": {
+            "component": "vsource",
+            "name": "V1",
+            "numeric_attrs": {
+                "type": "dc",
+                "dc": 1.8
+            },
+            "parametric_attrs": {},
+            "computing_attrs": {}
+        },
+        "(3, 6, 0)": {
+            "component": "vsource",
+            "name": "V0",
+            "numeric_attrs": {
+                "type": "dc"
+            },
+            "parametric_attrs": {
+                "dc": "VGS"
+            },
+            "computing_attrs": {}
+        },
+        "(3, 7, 0)": {
+            "component": "port",
+            "name": "PORT1",
+            "numeric_attrs": {
+                "r": 50.0,
+                "type": "sine"
+            },
+            "parametric_attrs": {},
+            "computing_attrs": {}
+        },
+        "(3, 8, 0)": {
+            "component": "port",
+            "name": "PORT0",
+            "numeric_attrs": {
+                "r": 50.0,
+                "dc": 1.0,
+                "type": "sine",
+                "freq": 30000000000.0,
+                "dbm": -20.0
+            },
+            "parametric_attrs": {},
+            "computing_attrs": {}
+        },
+        "(4, 8, 0)": {
+            "component": "capacitor",
+            "name": "C0",
+            "numeric_attrs": {
+                "m": 1.0
+            },
+            "parametric_attrs": {
+                "c": "C1"
+            },
+            "computing_attrs": {}
+        },
+        "(4, 6, 0)": {
+            "component": "inductor",
+            "name": "L0",
+            "numeric_attrs": {
+                "l": 1e-09
+            },
+            "parametric_attrs": {},
+            "computing_attrs": {}
+        }
+    }
+}

@@ -1,0 +1,45 @@
+// Library name: MLProj_v2_LNA_e2
+// Cell name: Differential_LNA
+// View name: schematic
+N5 (net11 net11 0 GND) nmos w=W l=45.0n as=W * 2.5 * (45.0n) ad=W * 2.5 * (45.0n) \
+         ps=(2 * W) + (5 * (45.0n)) pd=(2 * W) + (5 * (45.0n)) m=1 \
+        region=sat
+N4 (net13 net10 net9 GND) nmos w=WN1 l=45.0n as=WN1 * 2.5 * (45.0n) ad=WN1 * 2.5 * (45.0n) \
+         ps=(2 * WN1) + (5 * (45.0n)) pd=(2 * WN1) + (5 * (45.0n)) m=5 \
+        region=sat
+N3 (net14 VDD net13 GND) nmos w=WN2 l=45.0n as=WN2 * 2.5 * (45.0n) ad=WN2 * 2.5 * (45.0n) \
+         ps=(2 * WN2) + (5 * (45.0n)) pd=(2 * WN2) + (5 * (45.0n)) m=5 \
+        region=sat
+N2 (net5 net5 0 GND) nmos w=W l=45.0n as=W * 2.5 * (45.0n) ad=W * 2.5 * (45.0n) \
+         ps=(2 * W) + (5 * (45.0n)) pd=(2 * W) + (5 * (45.0n)) m=1 \
+        region=sat
+N1 (net7 net4 net3 GND) nmos w=WN1 l=45.0n as=WN1 * 2.5 * (45.0n) ad=WN1 * 2.5 * (45.0n) \
+         ps=(2 * WN1) + (5 * (45.0n)) pd=(2 * WN1) + (5 * (45.0n)) m=5 \
+        region=sat
+N0 (net1 VDD net7 GND) nmos w=WN2 l=45.0n as=WN2 * 2.5 * (45.0n) ad=WN2 * 2.5 * (45.0n) \
+         ps=(2 * WN2) + (5 * (45.0n)) pd=(2 * WN2) + (5 * (45.0n)) m=5 \
+        region=sat
+R5 (net11 net12) resistor r=R2
+R4 (VDD net14) resistor r=R3
+R3 (VDD net11) resistor r=R1
+R2 (net5 net6) resistor r=R2
+R1 (VDD net1) resistor r=R3
+R0 (VDD net5) resistor r=R1
+L5 (net12 net10) inductor l=Lg
+L4 (net9 0) inductor l=Ls
+L3 (VDD net14) inductor l=Ld
+L2 (net6 net4) inductor l=Lg
+L1 (net3 0) inductor l=Ls
+L0 (VDD net1) inductor l=Ld
+C5 (Vout\- 0) capacitor c=100f
+C4 (net14 Vout\-) capacitor c=C1
+C3 (Vin\- net12) capacitor c=C2
+C2 (Vout\+ 0) capacitor c=100f
+C1 (net1 Vout\+) capacitor c=C1
+C0 (Vin\+ net6) capacitor c=C2
+V1 (GND 0) vsource dc=0 type=dc
+V0 (VDD 0) vsource dc=VDD type=dc
+I11 (net16 Vout\+ Vout\-) balun rin=50 rout=25 loss=0
+I10 (net2 Vin\+ Vin\-) balun rin=50 rout=25 loss=0
+PORT0 (net2 0) port r=50 type=sine freq=fin dbm=pin
+PORT1 (net16 0) port r=50 type=dc

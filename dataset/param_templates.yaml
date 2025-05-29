@@ -1,0 +1,26 @@
+balun:
+- rout
+capacitor:
+- c
+inductor:
+- l
+isource:
+- dc
+- mag
+nmos:
+- m
+- w
+pmos:
+- m
+- w
+port:
+- dbm
+- dc
+- freq
+- num
+resistor:
+- r
+vsource:
+- dc
+- mag
+- phase

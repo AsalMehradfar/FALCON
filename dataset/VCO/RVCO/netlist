@@ -1,0 +1,29 @@
+// Library name: MLProj_v2_VCO_30GHz
+// Cell name: Ring
+// View name: schematic
+N5 (Vcont OUT Vcont GND) nmos w=Wvar l=45.0n as=Wvar * 2.5 * (45.0n) ad=Wvar * 2.5 * (45.0n) \
+         ps=(2 * Wvar) + (5 * (45.0n)) pd=(2 * Wvar) + (5 * (45.0n)) m=1 \
+        region=sat
+N4 (Vcont net2 Vcont GND) nmos w=Wvar l=45.0n as=Wvar * 2.5 * (45.0n) ad=Wvar * 2.5 * (45.0n) \
+         ps=(2 * Wvar) + (5 * (45.0n)) pd=(2 * Wvar) + (5 * (45.0n)) m=1 \
+        region=sat
+N3 (Vcont net1 Vcont GND) nmos w=Wvar l=45.0n as=Wvar * 2.5 * (45.0n) ad=Wvar * 2.5 * (45.0n) \
+         ps=(2 * Wvar) + (5 * (45.0n)) pd=(2 * Wvar) + (5 * (45.0n)) m=1 \
+        region=sat
+N2 (OUT net2 0 GND) nmos w=Wn l=45.0n as=Wn * 2.5 * (45.0n) ad=Wn * 2.5 * (45.0n) \
+         ps=(2 * Wn) + (5 * (45.0n)) pd=(2 * Wn) + (5 * (45.0n)) m=1 \
+        region=sat
+N1 (net2 net1 0 GND) nmos w=Wn l=45.0n as=Wn * 2.5 * (45.0n) ad=Wn * 2.5 * (45.0n) \
+         ps=(2 * Wn) + (5 * (45.0n)) pd=(2 * Wn) + (5 * (45.0n)) m=1 \
+        region=sat
+N0 (net1 OUT 0 GND) nmos w=Wn l=45.0n as=Wn * 2.5 * (45.0n) ad=Wn * 2.5 * (45.0n) \
+         ps=(2 * Wn) + (5 * (45.0n)) pd=(2 * Wn) + (5 * (45.0n)) m=1 \
+        region=sat
+L3 (net3 VDD) inductor l=L2
+L2 (net3 OUT) inductor l=L1
+L1 (net3 net2) inductor l=L1
+L0 (net3 net1) inductor l=L1
+C0 (net3 0) capacitor c=C
+V2 (GND 0) vsource dc=0 type=dc
+V1 (Vcont 0) vsource dc=Vcont type=dc
+V0 (VDD 0) vsource dc=VDD type=dc

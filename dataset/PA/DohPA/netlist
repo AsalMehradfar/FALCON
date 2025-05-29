@@ -1,0 +1,38 @@
+// Library name: MLProj_v2_PA_Doherty
+// Cell name: Doherty_PA
+// View name: schematic
+N3 (net10 net3 0 GND) nmos w=WN2 l=45.0n as=WN2 * 2.5 * (45.0n) ad=WN2 * 2.5 * (45.0n) \
+         ps=(2 * WN2) + (5 * (45.0n)) pd=(2 * WN2) + (5 * (45.0n)) m=5 \
+        region=sat
+N2 (net8 net7 net10 GND) nmos w=WN2 l=45.0n as=WN2 * 2.5 * (45.0n) ad=WN2 * 2.5 * (45.0n) \
+         ps=(2 * WN2) + (5 * (45.0n)) pd=(2 * WN2) + (5 * (45.0n)) m=5 \
+        region=sat
+N1 (net4 net1 0 GND) nmos w=WN1 l=45.0n as=WN1 * 2.5 * (45.0n) ad=WN1 * 2.5 * (45.0n) \
+         ps=(2 * WN1) + (5 * (45.0n)) pd=(2 * WN1) + (5 * (45.0n)) m=5 \
+        region=sat
+N0 (net5 net6 net4 GND) nmos w=WN1 l=45.0n as=WN1 * 2.5 * (45.0n) ad=WN1 * 2.5 * (45.0n) \
+         ps=(2 * WN1) + (5 * (45.0n)) pd=(2 * WN1) + (5 * (45.0n)) m=5 \
+        region=sat
+L5 (net8 net9) inductor l=L6
+L4 (VDD net9) inductor l=L5
+L3 (net5 Vout) inductor l=L4
+L2 (VDD net5) inductor l=L3
+L1 (net3 net2) inductor l=L2
+L0 (Vin 0) inductor l=L1
+C6 (net7 0) capacitor c=Cg
+C5 (net6 0) capacitor c=Cg
+C4 (net9 0) capacitor c=C5
+C3 (Vout net9) capacitor c=C4
+C2 (net2 0) capacitor c=C3
+C1 (Vin net2) capacitor c=C2
+C0 (net1 Vin) capacitor c=C1
+R3 (net3 Vb1) resistor r=Rb
+R2 (net1 Vb1) resistor r=Rb
+R1 (Vb2 net6) resistor r=Rb
+R0 (Vb2 net7) resistor r=Rb
+V3 (GND 0) vsource dc=0 type=dc
+V2 (Vb2 0) vsource dc=Vb2 type=dc
+V1 (Vb1 0) vsource dc=Vb1 type=dc
+V0 (VDD 0) vsource dc=VDD type=dc
+PORT1 (Vout 0) port r=50 type=dc
+PORT0 (Vin 0) port r=50 type=sine freq=fin dbm=pin

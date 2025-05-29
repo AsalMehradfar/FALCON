@@ -1,0 +1,46 @@
+Performance:
+  DCPowerConsumption: W
+  VoltageGain: dB
+  PowerGain: dB
+  ConversionGain: dB
+  S11: dB
+  S22: dB
+  NoiseFigure: dB
+  Bandwidth: Hz
+  OscillationFrequency: Hz
+  TuningRange: Hz
+  OutputPower: dBm
+  PSAT: dBm
+  DrainEfficiency: "%"
+  PAE: "%"
+  PhaseNoise: dBc/Hz
+  VoltageSwing: V
+Classes:
+  CGLNA: 0
+  CLNA: 1
+  CSLNA: 2
+  DLNA: 3
+  DBAMixer: 4
+  DBPMixer: 5
+  SBAMixer: 6
+  SBPMixer: 7
+  ClassBPA: 8
+  ClassEPA: 9
+  DohPA: 10
+  DPA: 11
+  CGVA: 12
+  CSVA: 13
+  CVA: 14
+  SFVA: 15
+  IFVCO: 16
+  CCVCO: 17
+  ColVCO: 18
+  RVCO: 19
+Ground:
+  - "0"
+  - GND
+  - gnd
+Categorical_Attr:
+  - region
+  - type
+  - fundname

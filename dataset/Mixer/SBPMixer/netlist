@@ -1,0 +1,19 @@
+// Library name: MLProj_v2_Mixer
+// Cell name: Single_Balanced_Passive
+// View name: schematic
+N1 (IF\- LO\- RF GND) nmos w=WN l=45.0n as=WN * 2.5 * (45.0n) ad=WN * 2.5 * (45.0n) \
+         ps=(2 * WN) + (5 * (45.0n)) pd=(2 * WN) + (5 * (45.0n)) m=1 \
+        region=sat
+N0 (IF\+ LO\+ RF GND) nmos w=WN l=45.0n as=WN * 2.5 * (45.0n) ad=WN * 2.5 * (45.0n) \
+         ps=(2 * WN) + (5 * (45.0n)) pd=(2 * WN) + (5 * (45.0n)) m=1 \
+        region=sat
+C0 (IF\+ GND) capacitor c=C
+C1 (IF\- GND) capacitor c=C
+R1 (IF\- GND) resistor r=R
+R0 (IF\+ GND) resistor r=R
+V0 (GND 0) vsource dc=0 type=dc
+PORT1 (net1 0) port r=50 type=sine freq=flo dbm=plo
+I5 (IF_OUT IF\- IF\+) balun rin=50 rout=100 loss=0
+I4 (net1 LO\+ LO\-) balun rin=50 rout=100 loss=0
+PORT0 (RF 0) port r=50 type=dc freq=frf dbm=prf pacmag=pacmag
+PORT2 (IF_OUT 0) port r=50 type=dc
